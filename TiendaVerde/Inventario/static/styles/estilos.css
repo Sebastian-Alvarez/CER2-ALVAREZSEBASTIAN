@@ -1,0 +1,16 @@
+/* --------------- Centrador de Contenido --------------- */
+.derecha {
+    text-align: right;
+}
+
+.izquierda {
+    text-align: left;
+}
+
+.abajo {
+    vertical-align: text-bottom;
+}
+
+.centrado {
+    text-align: center;
+}

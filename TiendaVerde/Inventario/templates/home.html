@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %} Tienda Verde {% endblock %}
+
+{% block content %}
+    <!-- --------------- Container para la Responsividad del Sitio --------------- -->
+    <div class="container-fluid">
+
+        <!-- --------------------------- Descripcion --------------------------- -->
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col">
+                <img src="{% static 'images/logo.jpg' %}" alt="logo image for testing">
+            </div>
+
+            <div class="col centrado">
+                <br><br><br><br><br><br>
+                <p>Tienda Verde" es una pequeña empresa local dedicada a la venta de productos ecológicos y sostenibles
+                </p>
+            </div>
+            <div class="col-2"></div>
+
+        </div>
+        <!-- ----------------------- Productos Destacados ----------------------- -->
+        <h1 class="centrado">Productos Destacados</h1><br>
+        <div class="row ">
+            <div class="col-2"></div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/bolsaTela.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Bolsas de Telas</h5>
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/bolsasCafe.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Bolsas de Cafe Reutilizable</h5>
+                        <p class="card-text">Some quick example text to build on the card title </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="img/jabonLavanda.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Jabon Lavanda</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                            card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+{% endblock %}

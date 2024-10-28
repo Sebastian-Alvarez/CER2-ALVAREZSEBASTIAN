@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %} Catalogo {% endblock %}
+from 
+{% block content %}
+    <h1 class="centrado">Catalogo de Productos</h1>
+    <div class="row">
+        {% for producto in productos %}
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ producto.img }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto.name }}</h5>
+                    <p class="card-text">{{ producto.descripcion }}.</p>
+                    <button type="button" value="{{ producto.id }}" class="btn btn-success" id="agregar_producto">Add to cart</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+<script>
+    $(document).on('click','#agregar_producto', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '{% url "carrito_add" %}',
+            data: {
+                product_id: $('#agregar_producto').val(),
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                action: 'post'
+            },
+            success: function(json){
+                console.log(json)
+            },
+            error: function(xhr,errmsg,err){
+                
+            }
+        });
+    })
+</script>
+
+
+{% endblock %}
